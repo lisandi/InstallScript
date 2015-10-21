@@ -2,6 +2,8 @@
 ################################################################################
 # Script for installing Odoo V9 on Ubuntu 14.04 LTS (could be used for other version too)
 # Author: Yenthe Van Ginneken
+# Based on A. Schenkels Script
+# Modified for LisAndi by Andi Becker
 #-------------------------------------------------------------------------------
 # This script will install Odoo on your Ubuntu 14.04 server. It can install multiple Odoo instances
 # in one Ubuntu because of the different xmlrpc_ports
@@ -60,7 +62,7 @@ apt-get update && apt-get upgrade -y
 # Install PostgreSQL Server
 #--------------------------------------------------
 echo -e "\n---- Install PostgreSQL Server ----"
-apt-get install postgresql -y
+apt-get install postgresql-9.4 -y
 
 echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
 su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
