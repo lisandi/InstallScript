@@ -32,7 +32,6 @@ INSTALL_WKHTMLTOPDF="True"
 WKHTMLTOX_X64=http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
 WKHTMLTOX_X32=http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-i386.deb
 
-
 #Set the default Odoo port (you still have to use -c /etc/odoo-server.conf for example to use this.)
 OE_PORT="8069"
 
@@ -43,6 +42,18 @@ OE_VERSION="9.0"
 #set the superadmin password
 OE_SUPERADMIN="admin"
 OE_CONFIG="${OE_USER}-server"
+
+#--------------------------------------------------
+# Adding Postgres 9.4 repository
+#--------------------------------------------------
+
+echo -e "* Create init file"
+cat <<EOF > /etc/apt/sources.list.d/pgdg.list
+deb http://apt.postgresql.org/pub/repos/apt/ utopic-pgdg main
+EOF
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+  sudo apt-key add -
 
 #--------------------------------------------------
 # Make sure only root or sudoers can run our script
