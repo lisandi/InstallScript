@@ -247,8 +247,8 @@ Done! The Odoo server is up and running. Specifications:
 Port: $OE_PORT
 User service: $OE_USER
 User PostgreSQL: $OE_USER
-Code location: $OE_USER
-Addons folder: $OE_USER/$OE_CONFIG/addons/
+Code location: $OE_HOME
+Addons folder: OE_HOME_EXT/$OE_CONFIG/addons/
 Start Odoo service: sudo service $OE_CONFIG start
 Stop Odoo service: sudo service $OE_CONFIG stop
 Restart Odoo service: sudo service $OE_CONFIG restart
