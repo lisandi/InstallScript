@@ -49,7 +49,7 @@ OE_CONFIG="${OE_USER}-server"
 
 echo -e "* Create init file"
 cat <<EOF > /etc/apt/sources.list.d/pgdg.list
-deb http://apt.postgresql.org/pub/repos/apt/ utopic-pgdg main
+deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
 EOF
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
